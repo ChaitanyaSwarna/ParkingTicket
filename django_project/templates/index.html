@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      
+    </head>
+    <body>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+      }
+     .container {
+        max-width: 320px;
+        margin: 0 auto;
+        background-color: lightgrey;
+        padding: 7px;
+        border-radius: 8px;
+        float: left;
+     }
+        
+        
+    </style>
+    
+    <div class="container">
+    
+    <form class="container mt-3 mb-3" method="POST" action="/">
+      <h2 class="mb-4"><b>Enter the ticket details</b></h2>
+      {% csrf_token %}
+      <div class="flex mb-3">
+      <label for="ticketdetails">date_time: </label>
+      <input type="datetime-local" id="ticketdetails" name="ticketdetails" placeholder="Enter the date and time"><br>
+      </div><br>
+      <div class="flex mb-2 mb-3">
+      <label class="form-label">Location: </label>
+      <input type="text" name="location" placeholder="Enter the location"><br>
+      </div><br>
+      <form action="/new.html">
+      <input type="submit" value="Submit">
+      </form>
+    </body>
+  </html>

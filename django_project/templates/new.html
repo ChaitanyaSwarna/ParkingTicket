@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h2>Information about the ticket</h2>
+  </head>
+  <body>
+  <style>
+  table, td, th 
+    {
+      border: 1px solid black; 
+      border-collapse: collapse;
+      text-align: center;
+      font-family: Courier;
+      font-size: 15.5px;
+    }
+  tr:hover {background-color: skyblue;}
+  th{background-color:lightpink;}
+  tr:nth-child(even) {background-color: lightyellow;}
+  td,th
+    {
+      padding: 1px;
+      border-bottom: 1px solid black;
+      color: red;
+    }
+  .container{
+    max-width:320px;
+  }
+  
+    
+  </style>
+  <div class="container">
+  <table>
+    <thead>
+    <body>
+    <tr>
+      <th>Day</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Location</th>
+    </tr>
+    {% for ticket in tickets %}
+    <tr>
+      <td>{{ticket.date_time|date:"l"}}</td>
+      <td>{{ticket.date_time|date:"m-d-Y"}}</td>
+      <td>{{ticket.date_time|time:"H:i"}}</td>
+      <td>{{ticket.Location}}</td>
+    </tr>
+    {% endfor %}
+    </body>  
+    </thead>
+  </table><br>
+  <a href="/">Go back to home page</a>
+  </body>
+</html>
